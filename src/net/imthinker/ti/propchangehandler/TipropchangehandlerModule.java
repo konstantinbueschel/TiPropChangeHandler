@@ -22,6 +22,7 @@ import org.appcelerator.titanium.TiApplication;
 public class TipropchangehandlerModule extends KrollModule implements OnSharedPreferenceChangeListener {
 
     public TipropchangehandlerModule() {
+        
         super();
     }
 
@@ -32,21 +33,22 @@ public class TipropchangehandlerModule extends KrollModule implements OnSharedPr
 
     @Override
     public void onResume(Activity activity) {
+        
         super.onResume(activity);
 
-        SharedPreferences sharedPreferences = activity.getSharedPreferences(
-                TiApplication.APPLICATION_PREFERENCES_NAME,
-                0
-        );
+        SharedPreferences sharedPreferences = activity.getSharedPreferences(TiApplication.APPLICATION_PREFERENCES_NAME, 0);
+
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
-
+ 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                                          String key) {
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        
         KrollDict krollDict = new KrollDict();
-        krollDict.put("changekey", key);
-        fireEvent("propchange", krollDict);
+
+        krollDict.put("changedKey", key);
+
+        fireEvent("propertychange", krollDict);
     }
 
 }
