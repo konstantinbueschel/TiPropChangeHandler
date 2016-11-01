@@ -2,8 +2,9 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0
+version: 1.0.2
 apiversion: 2
+architectures: armeabi armeabi-v7a x86
 description: Detect changed Ti.App.Properties for Android
 author: Ryutaro Miyashita
 license: Apache License, Version 2.0
@@ -15,4 +16,4 @@ name: TiPropChangeHandler
 moduleid: net.imthinker.ti.propchangehandler
 guid: adb117d8-f1d5-4867-8583-223f533a8ce1
 platform: android
-minsdk: 3.2.3.GA
+minsdk: 5.5.1.GA

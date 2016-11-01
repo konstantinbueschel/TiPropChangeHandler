@@ -1,7 +1,1 @@
-apply plugin: 'java'
-sourceSets {
-    main.java.srcDirs = ['src','build/.apt_generated','.apt_generated']
-    main.resources.srcDirs = ['src','build/.apt_generated','.apt_generated']
-    test.java.srcDirs = ['tests/java']
-    test.resources.srcDirs = ['tests/resources']
-}
+ant.importBuild 'build.xml'
